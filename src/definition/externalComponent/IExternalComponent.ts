@@ -1,4 +1,3 @@
-import { IExternalComponentOptions } from './IExternalComponentOptions';
 /**
  * Represents an external component that is being provided.
  */
@@ -29,10 +28,6 @@ export interface IExternalComponent {
      * Provides the url that external component will load.
      */
     url: string;
-    /**
-     * Provides options for the external component.
-     */
-    options?: IExternalComponentOptions;
 }
 
 export enum ExternalComponentLocation {
