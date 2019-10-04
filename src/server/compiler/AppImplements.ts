@@ -19,6 +19,11 @@ export enum AppInterface {
     IPostRoomCreate = 'IPostRoomCreate',
     IPreRoomDeletePrevent = 'IPreRoomDeletePrevent',
     IPostRoomDeleted = 'IPostRoomDeleted',
+    // External Components
+    IPreExternalComponentWebhookPrevent = 'IPreExternalComponentWebhookPrevent',
+    IPreExternalComponentWebhookModify = 'IPreExternalComponentWebhookModify',
+    IPreExternalComponentWebhookExtend = 'IPreExternalComponentWebhookExtend',
+    IPostExternalComponentWebhook = 'IPostExternalComponentWebhook',
 }
 
 export class AppImplements {

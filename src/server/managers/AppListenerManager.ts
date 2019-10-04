@@ -4,6 +4,7 @@ import { AppInterface } from '../compiler';
 import { ProxiedApp } from '../ProxiedApp';
 import { AppAccessorManager } from './AppAccessorManager';
 
+import { IExternalComponentWebhook } from '../../definition/externalComponent';
 import { IMessage } from '../../definition/messages';
 import { AppMethod } from '../../definition/metadata';
 import { IRoom } from '../../definition/rooms';
@@ -52,7 +53,7 @@ export class AppListenerManager {
     }
 
     // tslint:disable-next-line
-    public async executeListener(int: AppInterface, data: IMessage | IRoom | IUser): Promise<void | boolean | IMessage | IRoom | IUser> {
+    public async executeListener(int: AppInterface, data: IMessage | IRoom | IUser | IExternalComponentWebhook): Promise<void | boolean | IMessage | IRoom | IUser | IExternalComponentWebhook> {
         switch (int) {
             // Messages
             case AppInterface.IPreMessageSentPrevent:
@@ -93,6 +94,15 @@ export class AppListenerManager {
             case AppInterface.IPostRoomDeleted:
                 this.executePostRoomDeleted(data as IRoom);
                 return;
+            // External Components
+            case AppInterface.IPreExternalComponentWebhookPrevent:
+                return this.executePreExternalComponentWebhookPrevent(data as IExternalComponentWebhook);
+            case AppInterface.IPreExternalComponentWebhookModify:
+                return this.executePreExternalComponentWebhookModify(data as IExternalComponentWebhook);
+            case AppInterface.IPreExternalComponentWebhookExtend:
+                return this.executePreExternalComponentWebhookExtend(data as IExternalComponentWebhook);
+            case AppInterface.IPostExternalComponentWebhook:
+                return this.executePostExternalComponentWebhook(data as IExternalComponentWebhook);
             default:
                 console.warn('Unimplemented (or invalid) AppInterface was just tried to execute.');
                 return;
@@ -577,5 +587,28 @@ export class AppListenerManager {
                 );
             }
         }
+    }
+
+    // External Components
+    private async executePreExternalComponentWebhookPrevent(data: IExternalComponentWebhook): Promise<boolean> {
+        let prevented = false;
+
+        return prevented;
+    }
+
+    private async executePreExternalComponentWebhookModify(data: IExternalComponentWebhook): Promise<IExternalComponentWebhook> {
+        let webhook = data;
+
+        return webhook;
+    }
+
+    private async executePreExternalComponentWebhookExtend(data: IExternalComponentWebhook): Promise<IExternalComponentWebhook> {
+        let webhook = data;
+
+        return webhook;
+    }
+
+    private async executePostExternalComponentWebhook(data: IExternalComponentWebhook): Promise<void> {
+        
     }
 }

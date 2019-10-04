@@ -43,4 +43,13 @@ export enum AppMethod {
     EXECUTEPREROOMDELETEPREVENT = 'executePreRoomDeletePrevent',
     CHECKPOSTROOMDELETED = 'checkPostRoomDeleted',
     EXECUTEPOSTROOMDELETED = 'executePostRoomDeleted',
+    // External Component handlers
+    CHECKPREEXTERNALCOMPONENTPREVENT = 'checkPreExternalComponentPrevent',
+    CHECKPREEXTERNALCOMPONENTMODIFY = 'checkPreExternalComponentModify',
+    CHECKPREEXTERNALCOMPONENTEXTEND = 'checkPreExternalComponentExtend',
+    CHECKPOSTEXTERNALCOMPONENT = 'checkPostExternalComponent',
+    EXECUTEPREEXTERNALCOMPONENTPREVENT = 'executePreExternalComponentPrevent',
+    EXECUTEPREEXTERNALCOMPONENTMODIFY = 'executePreExternalComponentModify',
+    EXECUTEPREEXTERNALCOMPONENTEXTEND = 'executePreExternalComponentExtend',
+    EXECUTEPOSTEXTERNALCOMPONENT = 'executePostExternalComponent',
 }
