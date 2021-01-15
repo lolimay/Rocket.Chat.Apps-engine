@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: lolimay/Rocket.Chat
-          ref: 'apps/e2e-testing'
+          ref: 'e2e-testing-failed-case'
           token: ${{ secrets.GTHUB_PAT }}
           path: Rocket.Chat
       - name: Checkout Apps-Engine
