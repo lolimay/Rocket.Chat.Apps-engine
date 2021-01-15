@@ -9,7 +9,7 @@ jobs:
       - name: Checkout Rocket.Chat
         uses: actions/checkout@v2
         with:
-          repository: RocketChat/Rocket.Chat
+          repository: lolimay/Rocket.Chat
           ref: 'apps/e2e-testing'
           token: ${{ secrets.GTHUB_PAT }}
           path: Rocket.Chat
